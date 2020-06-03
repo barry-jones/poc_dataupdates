@@ -1,0 +1,7 @@
+{
+  "name": "filetore_poc",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
