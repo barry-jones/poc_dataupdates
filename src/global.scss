@@ -24,3 +24,96 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+:root {
+    --ion-background-color: #24292d;
+    background-color: #24292d;
+    --ion-text-color: #f0f0ef;
+    color: #fff;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+    --highlight: #fa981d;
+}
+
+button {
+    background-color: #374757;
+    padding: 1em;
+    font-weight: bold;
+
+    color: #fff;
+}
+ion-content {
+    display: grid;
+}
+.header {
+    padding: 0 1em;
+
+    h1 {
+        font-size: 1em;
+    }
+}
+.content {
+    padding: 2em 1em;
+}
+
+.data {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    letter-spacing: 0.1em;
+    font-weight: normal;
+    text-align: center;
+}
+
+.versions {
+    letter-spacing: 0.1em;
+    font-weight: bold;
+    text-align: center;
+}
+.versions__original {
+    padding-right: 1.5em;
+    background-position: center right;
+    background-size: 1em;
+    background-repeat: no-repeat;
+    background-image: url('assets/imgs/right-128px.svg');
+}
+.versions__latest {
+    padding-left: 0.5em;
+    color: var(--highlight);
+}
+
+.actions {
+    margin: 3em;
+    display: flex;
+    justify-content: center;
+    button {
+        border-radius: 5px;
+        padding: 0.9em 1.2em;
+        margin-right: 1em;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+    }
+
+    .update {
+        padding-left: 2.5em;
+        background-position: 0.5em center;
+        background-size: 1.5em;
+        background-repeat: no-repeat;
+        background-image: url('assets/imgs/download-128px.svg');
+    }
+}
+
+.activity {
+    font-size: 0.7em;
+    text-align: center;
+}
+.progress {
+    text-align: center;
+}
+
+.notes {
+    text-align: center;
+    font-style: italic;
+    padding: 1em 2em;
+}

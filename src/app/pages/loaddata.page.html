@@ -1,0 +1,37 @@
+<ion-content>
+  <div class="new_version" *ngIf="!updating">
+    <div class="header">
+      <h1>Update</h1>
+    </div>
+    <div class="content data">
+      <div>
+        <img height="128px" width="128px" src="assets/imgs/save-128px.svg" />
+      </div>
+      <p>New data version available.</p>
+      <div class="versions">
+        <span class="versions__original">v1.0</span>
+        <span class="versions__latest">v1.1</span>
+      </div>
+      <div class="actions">
+        <button class="button update" (click)="update()">Update</button>
+        <button class="button skip" (click)="skip()">Skip</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="updating" *ngIf="updating">
+    <div class="header">
+      <h1>Updating</h1>
+    </div>
+    <div class="content">
+      <div class="activity">{{ activity }}</div>
+      <div class="progress">{{ percentage }}</div>
+    </div>
+    <div class="notes">
+      <p>{{ notes }}</p>
+    </div>
+    <div class="actions" *ngIf="downloadComplete">
+      <button class="button skip" (click)="continue()">Continue</button>
+    </div>
+  </div>
+</ion-content>

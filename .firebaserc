@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "concept-f8b96": {
+      "hosting": {
+        "app": [
+          "concept-f8b96"
+        ]
+      }
+    }
+  }
+}

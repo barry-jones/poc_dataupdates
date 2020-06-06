@@ -1,0 +1,9 @@
+<ion-content *ngIf="isLoaded">
+  <div class="header">
+    <h1>Home</h1>
+  </div>
+  <div class="content">
+    <h2>{{ content.title }}</h2>
+    <div [innerHtml]="content.content" class="ion-padding"></div>
+  </div>
+</ion-content>
