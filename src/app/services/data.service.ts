@@ -37,7 +37,7 @@ export class DataService {
         // lots of issues attempting to just check if a file exists, so
         // going ot be better to just attempt to read the contents of a 
         // known file.
-        let result = this.file.readFile(`${environment.localDataFolder}/content.json`)
+        let result = await this.file.readFile(`${environment.localDataFolder}/content.json`)
         console.log(result);
         shouldUse = true;
       }

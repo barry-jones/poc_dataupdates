@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChildren, Renderer2, ViewChild, ElementRef } from '@angular/core';
 import { StorageService } from '../services/storage.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { HttpClient, HttpEvent, HttpEventType, HttpResponse } from '@angular/common/http';
@@ -12,8 +12,9 @@ import { File } from '@ionic-native/file/ngx';
   styleUrls: ['./loaddata.page.scss'],
 })
 export class LoaddataPage {
+  @ViewChild('progressbar') progress_bar: ElementRef;
+
   public currentProgress: number = 0;
-  public percentage: number = 0;
   public activity: string = '';
   public notes: string = '';
   /** Indicates if the data has been downloaded and installed on the device */
@@ -29,6 +30,7 @@ export class LoaddataPage {
     private http: HttpClient,
     private zip: Zip,
     private _file: File,
+    private renderer: Renderer2,
     ) { 
       this.file = route.snapshot.queryParams['filepath'];
       this.version = Number.parseFloat(route.snapshot.queryParams['version']);
@@ -83,7 +85,7 @@ export class LoaddataPage {
         tap((event: HttpEvent<Blob>) => {
           switch(event.type) {
             case HttpEventType.DownloadProgress:
-              this.percentage = Math.floor(event.loaded / event.total * 100);
+              this.setProgress(event.loaded, event.total);
               break;
           }
         }),
@@ -158,7 +160,9 @@ export class LoaddataPage {
     finally {}
   }
 
-  private progress(value: number) {
-    this.currentProgress = value;
+  private setProgress(value: number, total: number) {
+    const percentage = Math.floor(value / total * 100);
+    console.log({percentage: percentage, el: this.progress_bar.nativeElement });
+    this.renderer.setStyle(this.progress_bar.nativeElement, 'width', `${percentage}%`);
   }
 }

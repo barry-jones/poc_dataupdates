@@ -2,7 +2,13 @@
 
 Proof of concept application to check a service for the latest version of applicaiton data. Then to download that data and use it until a new set of data becomes available.
 
-<img src="readme/screen_cap.gif" />
+_downloading and replacing loading from device_
+
+![img](readme/screen_cap.gif)
+
+_skipping download and loading from assets_
+
+![img](readme/screen_cap_assets.gif)
 
 ## Notes
 It was the intention to swap out which version of the data access service to inject based on a check inside a DI injector. This seems slower than having a singleton figure it out once. See `createDataService`.

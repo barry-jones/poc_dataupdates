@@ -25,9 +25,11 @@
     </div>
     <div class="content">
       <div class="activity">{{ activity }}</div>
-      <div class="progress">{{ percentage }}</div>
+      <div class="progress">
+        <div class="progress__bar" #progressbar style="width: 0">&nbsp;</div>
+      </div>
     </div>
-    <div class="notes">
+    <div class="notes" *ngIf="notes === ''">
       <p>{{ notes }}</p>
     </div>
     <div class="actions" *ngIf="downloadComplete">

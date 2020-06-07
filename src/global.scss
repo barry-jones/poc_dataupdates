@@ -55,6 +55,9 @@ ion-content {
 }
 .content {
     padding: 2em 1em;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 .data {
@@ -81,6 +84,17 @@ ion-content {
 .versions__latest {
     padding-left: 0.5em;
     color: var(--highlight);
+}
+
+.progress {
+    margin-top: 1em;
+    width: 80%;
+    height: 1.5em;
+    border-radius: 5px;
+}
+.progress__bar {
+    background-color: var(--highlight);
+    border-radius: 5px;
 }
 
 .actions {
